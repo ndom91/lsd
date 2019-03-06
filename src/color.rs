@@ -132,7 +132,7 @@ impl Colors {
         if let Some(ref colors) = self.colors {
             let style_fg = Style::default().fg(colors[elem]);
             if elem.has_suid() {
-                style_fg.on(Colour::Fixed(124)) // Red3
+                style_fg.on(Colour::RGB(255, 110, 103)) // Red3
             } else {
                 style_fg
             }
@@ -176,15 +176,15 @@ impl Colors {
     fn get_light_theme_colour_map() -> HashMap<Elem, Colour> {
         let mut m = HashMap::new();
         // User / Group
-        m.insert(Elem::User, Colour::Fixed(230)); // Cornsilk1
-        m.insert(Elem::Group, Colour::Fixed(187)); // LightYellow3
+        m.insert(Elem::User, Colour::RGB(173, 105, 175)); // DeepPink1
+        m.insert(Elem::Group, Colour::RGB(132, 89, 141)); // DeepPink2
 
         // Permissions
-        m.insert(Elem::Read, Colour::Fixed(40)); // Green3
-        m.insert(Elem::Write, Colour::Fixed(192)); // DarkOliveGreen1
-        m.insert(Elem::Exec, Colour::Fixed(124)); // Red3
-        m.insert(Elem::ExecSticky, Colour::Fixed(13)); // Fuchsia
-        m.insert(Elem::NoAccess, Colour::Fixed(168)); // HotPink3
+        m.insert(Elem::Read, Colour::RGB(80, 250, 123)); // Green3
+        m.insert(Elem::Write, Colour::RGB(241, 250, 140)); // DarkOliveGreen1
+        m.insert(Elem::Exec, Colour::RGB(139, 233, 253)); // Red3
+        m.insert(Elem::ExecSticky, Colour::RGB(255, 85, 85)); // Fuchsia
+        m.insert(Elem::NoAccess, Colour::RGB(230, 230, 230)); // HotPink3
 
         // File Types
         m.insert(
@@ -192,49 +192,49 @@ impl Colors {
                 exec: false,
                 uid: false,
             },
-            Colour::Fixed(184),
+            Colour::RGB(244, 249, 157),
         ); // Yellow3
         m.insert(
             Elem::File {
                 exec: false,
                 uid: true,
             },
-            Colour::Fixed(184),
+            Colour::RGB(244, 249, 157),
         ); // Yellow3
         m.insert(
             Elem::File {
                 exec: true,
                 uid: false,
             },
-            Colour::Fixed(40),
+            Colour::RGB(80, 250, 123),
         ); // Green3
         m.insert(
             Elem::File {
                 exec: true,
                 uid: true,
             },
-            Colour::Fixed(40),
+            Colour::RGB(80, 250, 123),
         ); // Green3
-        m.insert(Elem::Dir { uid: true }, Colour::Fixed(33)); // DodgerBlue1
-        m.insert(Elem::Dir { uid: false }, Colour::Fixed(33)); // DodgerBlue1
-        m.insert(Elem::Pipe, Colour::Fixed(44)); // DarkTurquoise
-        m.insert(Elem::SymLink, Colour::Fixed(44)); // DarkTurquoise
-        m.insert(Elem::BrokenSymLink, Colour::Fixed(124)); // Red3
-        m.insert(Elem::BlockDevice, Colour::Fixed(44)); // DarkTurquoise
-        m.insert(Elem::CharDevice, Colour::Fixed(172)); // Orange3
-        m.insert(Elem::Socket, Colour::Fixed(44)); // DarkTurquoise
-        m.insert(Elem::Special, Colour::Fixed(44)); // DarkTurquoise
+        m.insert(Elem::Dir { uid: true }, Colour::RGB(139, 233, 253)); // DodgerBlue1
+        m.insert(Elem::Dir { uid: false }, Colour::RGB(139, 233, 253)); // DodgerBlue1
+        m.insert(Elem::Pipe, Colour::RGB(202, 169, 250)); // DarkTurquoise
+        m.insert(Elem::SymLink, Colour::RGB(202, 169, 250)); // DarkTurquoise
+        m.insert(Elem::BrokenSymLink, Colour::RGB(255, 110, 103)); // Red3
+        m.insert(Elem::BlockDevice, Colour::RGB(202, 169, 250)); // DarkTurquoise
+        m.insert(Elem::CharDevice, Colour::RGB(255, 85, 85)); // Orange3
+        m.insert(Elem::Socket, Colour::RGB(202, 169, 250)); // DarkTurquoise
+        m.insert(Elem::Special, Colour::RGB(202, 169, 250)); // DarkTurquoise
 
         // Last Time Modified
-        m.insert(Elem::HourOld, Colour::Fixed(40)); // Green3
-        m.insert(Elem::DayOld, Colour::Fixed(42)); // SpringGreen2
-        m.insert(Elem::Older, Colour::Fixed(36)); // DarkCyan
+        m.insert(Elem::HourOld, Colour::RGB(255, 146, 208)); // Green3
+        m.insert(Elem::DayOld, Colour::RGB(173, 105, 175)); // SpringGreen2
+        m.insert(Elem::Older, Colour::RGB(132, 89, 141)); // DarkCyan
 
         // Last Time Modified
-        m.insert(Elem::NonFile, Colour::Fixed(15)); // White
-        m.insert(Elem::FileSmall, Colour::Fixed(229)); // Wheat1
-        m.insert(Elem::FileMedium, Colour::Fixed(216)); // LightSalmon1
-        m.insert(Elem::FileLarge, Colour::Fixed(172)); // Orange3
+        m.insert(Elem::NonFile, Colour::RGB(255, 255, 255)); // White
+        m.insert(Elem::FileSmall, Colour::RGB(154, 237, 254)); // Wheat1
+        m.insert(Elem::FileMedium, Colour::RGB(139, 233, 253)); // LightSalmon1
+        m.insert(Elem::FileLarge, Colour::RGB(93, 219, 246)); // Orange3
 
         m
     }
