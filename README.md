@@ -2,7 +2,8 @@
 
 Hey all, so this is a fork of the original LSDeluxe (original README content below) where the colors are simply changed to something more pleasing / fitting to my linux machine, the Dracula color theme. I have included a precompiled binary for x86_64 linux in the tar ball (lsd_dracula.tar.gz), but the source is of course in this repo as well if you'd like to compile it yourselves. 
 
-Screenshot: 
+## Screenshot:   
+
 ![image](https://github.com/ndom91/lsd/raw/master/dracula_lsd.png)
 
 # LSD (LSDeluxe)
